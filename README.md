@@ -208,7 +208,7 @@ Exemplo de item:
 ## Destruindo a Infraestrutura
 
 ```bash
-terraform destroy
+Rode o workflow Destroy AWS Infrastructure 
 ```
 
 Se o bucket S3 não estiver vazio, configure:
