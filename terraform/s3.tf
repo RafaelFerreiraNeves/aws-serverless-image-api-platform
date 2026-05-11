@@ -1,5 +1,7 @@
 resource "aws_s3_bucket" "uploads" {
   bucket = "rafael-serverless-demo-123456789"
+
+force_destroy = true
 }
 
 resource "aws_lambda_permission" "allow_s3" {
