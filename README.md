@@ -10,7 +10,7 @@ Toda a infraestrutura é provisionada com Terraform.
 
 ---
 
-# Arquitetura
+## Arquitetura
 
 ```text
 Frontend
@@ -32,32 +32,32 @@ CloudWatch Logs
 
 ---
 
-# Serviços AWS Utilizados
+## Serviços AWS Utilizados
 
-* AWS Lambda
-* Amazon API Gateway
-* Amazon S3
-* Amazon DynamoDB
-* Amazon CloudWatch
-* AWS IAM
-* Terraform
-
----
-
-# Funcionalidades
-
-* Upload de imagens via frontend
-* API REST utilizando API Gateway
-* Backend serverless com Lambda
-* Armazenamento de arquivos no Amazon S3
-* Processamento automático orientado a eventos
-* Persistência de metadados no DynamoDB
-* Infrastructure as Code com Terraform
-* Logs e monitoramento com CloudWatch
+- AWS Lambda
+- Amazon API Gateway
+- Amazon S3
+- Amazon DynamoDB
+- Amazon CloudWatch
+- AWS IAM
+- Terraform
 
 ---
 
-# Estrutura do Projeto
+## Funcionalidades
+
+- Upload de imagens via frontend
+- API REST utilizando API Gateway
+- Backend serverless com Lambda
+- Armazenamento de arquivos no Amazon S3
+- Processamento automático orientado a eventos
+- Persistência de metadados no DynamoDB
+- Infrastructure as Code com Terraform
+- Logs e monitoramento com CloudWatch
+
+---
+
+## Estrutura do Projeto
 
 ```text
 project/
@@ -89,7 +89,7 @@ project/
 
 ---
 
-# Como Funciona
+## Como Funciona
 
 1. O frontend envia uma requisição HTTP POST contendo a imagem.
 2. O API Gateway recebe a requisição.
@@ -100,10 +100,61 @@ project/
 
 ---
 
+## Pré-requisitos
+
+- Conta AWS
+- Terraform instalado
+- Node.js instalado
+- AWS CLI configurado
+- Git instalado
 
 ---
 
-# Outputs do Terraform
+## Instalação
+
+### Clonar repositório
+
+```bash
+git clone https://github.com/YOUR_USERNAME/aws-serverless-image-platform.git
+
+cd aws-serverless-image-platform
+```
+
+---
+
+## Instalar dependências das Lambdas
+
+### Upload Lambda
+
+```bash
+cd lambda-upload
+
+npm install
+```
+
+### Processor Lambda
+
+```bash
+cd ../lambda-processor
+
+npm install
+```
+
+---
+
+## Deploy da Infraestrutura
+
+```bash
+cd ../terraform
+
+terraform init
+
+terraform apply
+```
+
+---
+
+## Outputs do Terraform
 
 Após o deploy:
 
@@ -123,7 +174,7 @@ dynamodb_table = "images-table"
 
 ---
 
-# Configurar Frontend
+## Configurar Frontend
 
 Edite:
 
@@ -147,7 +198,7 @@ https://abc123.execute-api.us-east-1.amazonaws.com/dev
 
 ---
 
-# Executando o Frontend
+## Executando o Frontend
 
 Abra:
 
@@ -159,13 +210,13 @@ no navegador e envie uma imagem.
 
 ---
 
-# Validando o Fluxo
+## Validando o Fluxo
 
-## S3
+### S3
 
 As imagens enviadas devem aparecer no bucket S3.
 
-## CloudWatch
+### CloudWatch
 
 As duas funções Lambda geram logs:
 
@@ -175,7 +226,7 @@ As duas funções Lambda geram logs:
 /aws/lambda/processor-lambda
 ```
 
-## DynamoDB
+### DynamoDB
 
 Os metadados devem ser armazenados em:
 
@@ -198,39 +249,50 @@ Exemplo de item:
 
 ---
 
+## Destruindo a Infraestrutura
+
+```bash
+terraform destroy
 ```
 
-# CI/CD
+Se o bucket S3 não estiver vazio, configure:
+
+```hcl
+force_destroy = true
+```
+
+em:
+
+```text
+s3.tf
+```
+
+---
+
+## CI/CD
 
 Este projeto inclui workflows GitHub Actions para:
 
-* Terraform Apply
-* Terraform Destroy
-* Automação de infraestrutura
+- Terraform Apply
+- Terraform Destroy
+- Automação de infraestrutura
 
 ---
 
-# Conceitos Demonstrados
+## Conceitos Demonstrados
 
-* Arquitetura Serverless
-* Arquitetura Orientada a Eventos
-* Infrastructure as Code
-* APIs REST
-* AWS Lambda
-* S3 Event Notifications
-* Bancos NoSQL
-* Monitoramento em Cloud
-* Pipelines CI/CD
+- Arquitetura Serverless
+- Arquitetura Orientada a Eventos
+- Infrastructure as Code
+- APIs REST
+- AWS Lambda
+- S3 Event Notifications
+- Bancos NoSQL
+- Monitoramento em Cloud
+- Pipelines CI/CD
 
 ---
 
-# Autor
+## Autor
 
 Rafael Ferreira Neves
-
----
-
-#  Licença
-
-Projeto desenvolvido para fins educacionais e portfólio DevOps/Cloud.
-
