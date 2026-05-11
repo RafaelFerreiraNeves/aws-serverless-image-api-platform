@@ -110,50 +110,6 @@ project/
 
 ---
 
-## Instalação
-
-### Clonar repositório
-
-```bash
-git clone https://github.com/YOUR_USERNAME/aws-serverless-image-platform.git
-
-cd aws-serverless-image-platform
-```
-
----
-
-## Instalar dependências das Lambdas
-
-### Upload Lambda
-
-```bash
-cd lambda-upload
-
-npm install
-```
-
-### Processor Lambda
-
-```bash
-cd ../lambda-processor
-
-npm install
-```
-
----
-
-## Deploy da Infraestrutura
-
-```bash
-cd ../terraform
-
-terraform init
-
-terraform apply
-```
-
----
-
 ## Outputs do Terraform
 
 Após o deploy:
