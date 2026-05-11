@@ -252,3 +252,10 @@ Este projeto inclui workflows GitHub Actions para:
 ## Autor
 
 Rafael Ferreira Neves
+
+---
+
+#  Licença
+
+Projeto desenvolvido para fins educacionais e portfólio DevOps/Cloud.
+
