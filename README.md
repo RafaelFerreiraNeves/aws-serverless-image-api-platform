@@ -1,4 +1,4 @@
-# AWS Serverless Image Platform
+# Plataforma Serverless de Imagens na AWS
 
 ## Visão Geral
 
